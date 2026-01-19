@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision National Title | Modern Title & Escrow Services</title>
+    <meta name="description" content="Precision National Title delivers fast, secure title and escrow services with 60-minute commitments, WireSafe® fraud protection, and a client-first approach. Founded by Brittany Kearney.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --navy: #0B1120;
+            --navy-light: #1e293b;
+            --pink: #EC4899;
+            --pink-glow: rgba(236, 72, 153, 0.4);
+            --pink-light: rgba(236, 72, 153, 0.1);
+            --white: #FFFFFF;
+            --grey: #F1F5F9;
+            --text: #334155;
+            --text-light: #64748b;
+            --border: #E2E8F0;
+            --success: #10B981;
+            --warning: #F59E0B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 100vh !important;
+            overflow-x: hidden !important;
+            background-color: var(--white) !important;
+        }
+
+        #app, .hl_app, .hl-app, .app-wrapper, body > div:first-child {
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========================================
+           HEADER
+        ======================================== */
+        header {
+            background: #fff;
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+        }
+
+        header .container {
+            max-width: 100%;
+            padding: 12px 20px;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+            width: 160px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .main-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 998;
+        }
+
+        .main-nav.active { display: flex; }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            padding: 15px 0;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-contact-details {
+            display: none;
+        }
+
+        .header-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+        }
+
+        .header-contact-item:hover {
+            background: var(--pink-light);
+        }
+
+        .header-contact-item i {
+            color: var(--pink);
+            font-size: 12px;
+            width: 16px;
+        }
+
+        .contact-phone {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .contact-email {
+            font-size: 11px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .mobile-toggle {
+            display: flex;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            gap: 5px;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        @media (min-width: 768px) {
+            .header-contact-details {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 2px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .mobile-toggle { display: none; }
+
+            .main-nav {
+                display: flex !important;
+                flex-direction: row !important;
+                position: static !important;
+                width: auto !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .main-nav a {
+                color: var(--navy);
+                font-weight: 700;
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 10px 24px;
+                border-radius: 50px;
+                border: 1px solid rgba(11, 17, 32, 0.1);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                background: rgba(255, 255, 255, 0.5);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .main-nav a::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                background: var(--navy);
+                transition: all 0.3s ease;
+                z-index: -1;
+            }
+
+            .main-nav a:hover {
+                color: #fff;
+                border-color: var(--navy);
+                transform: translateY(-2px);
+            }
+
+            .main-nav a:hover::before { width: 100%; }
+        }
+
+        /* ========================================
+           HERO
+        ======================================== */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            padding: 80px 0 100px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* VIDEO BACKGROUND STYLES */
+        .hero-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            opacity: 1; 
+            pointer-events: none;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(11, 17, 32, 0.4) 0%, 
+                rgba(11, 17, 32, 0.6) 50%, 
+                rgba(11, 17, 32, 0.95) 100%);
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, var(--pink-glow), transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.3), transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge i { color: var(--pink); }
+
+        .hero h1 {
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 20px;
+            line-height: 1.15;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--pink), #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subhead {
+            color: var(--pink);
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            opacity: 0.9;
+            font-size: 17px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            max-width: 280px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: var(--pink);
+            filter: blur(80px);
+            opacity: 0.25;
+            z-index: -1;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--pink), #be185d);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(236, 72, 153, 0.5);
+        }
+
+        .btn-hero-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-hero-secondary:hover {
+            background: #fff;
+            color: var(--navy);
+            border-color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ========================================
+           CTA BANNER
+        ======================================== */
+        .cta-banner {
+            background: #fff;
+            padding: 50px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta-banner h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .cta-banner p {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 25px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--navy);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(11, 17, 32, 0.2);
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--pink);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
+        }
+
+        .btn-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: var(--navy);
+            border: 2px solid var(--border);
+            padding: 12px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta-secondary:hover {
+            border-color: var(--navy);
+            background: var(--grey);
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+           STATS BAR
+        ======================================== */
+        .stats-bar {
+            background: var(--grey);
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--pink);
+        }
+
+        .stat-item.active {
+            background: var(--navy);
+            border-color: var(--navy);
+        }
+
+        .stat-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--pink-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--pink);
+            font-size: 22px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item.active .stat-icon {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        .stat-title {
+            color: var(--navy);
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .stat-item.active .stat-title { color: #fff; }
+
+        .stat-desc {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            font-size: 13px;
+            color: var(--text-light);
+            transition: all 0.4s ease;
+            line-height: 1.5;
+        }
+
+        .stat-item.active .stat-desc {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 10px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .stat-hint {
+            font-size: 10px;
+            color: var(--pink);
+            margin-top: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .stat-item.active .stat-hint { display: none; }
+
+        @media (min-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        /* ========================================
+           ABOUT / FOUNDER
+        ======================================== */
+        .about-section {
+            padding: 100px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .about-header {
+            margin-bottom: 50px;
+        }
+
+        .about-header span {
+            color: var(--pink);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .about-header h2 {
+            font-size: 32px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footprint-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .fp-stat {
+            text-align: center;
+        }
+
+        .fp-stat strong {
+            display: block;
+            font-size: 42px;
+            color: var(--navy);
+            font-family: 'Merriweather', serif;
+            line-height: 1;
+        }
+
+        .fp-stat strong.pink { color: var(--pink); }
+
+        .fp-stat span {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .founder-card {
+            background: var(--grey);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .founder-card img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .founder-text h4 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .founder-text h5 {
+            font-size: 11px;
+            color: var(--pink);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .founder-text p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+            font-style: italic;
+            max-width: 500px;
+        }
+
+        @media (min-width: 768px) {
+            .founder-card {
+                flex-direction: row;
+                text-align: left;
+                padding: 50px;
+            }
+            .founder-card img {
+                width: 160px;
+                height: 160px;
+            }
+            .about-header h2 { font-size: 38px; }
+        }
+
+        /* ========================================
+           SERVICES
+        ======================================== */
+        .services-section {
+            padding: 100px 0;
+            background: var(--grey);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .services-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .services-header p {
+            color: var(--text-light);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 35px 30px;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--pink), #a855f7);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+            border-color: var(--pink);
+        }
+
+        .service-card:hover::before { transform: scaleX(1); }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--pink-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--pink);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .card-icon {
+            background: var(--navy);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .service-card > p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-features li {
+            font-size: 13px;
+            color: var(--text);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-features li i {
+            color: var(--pink);
+            font-size: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 992px) {
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+            .services-header h2 { font-size: 38px; }
+        }
+
+        /* ========================================
+           TRUST / WHY CHOOSE
+        ======================================== */
+        .trust-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .trust-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .trust-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .trust-item {
+            padding: 35px 30px;
+            border-bottom: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .trust-item:last-child { border-bottom: none; }
+
+        .trust-item:hover { background: var(--grey); }
+
+        .trust-bar {
+            width: 40px;
+            height: 4px;
+            background: var(--pink);
+            margin-bottom: 20px;
+            border-radius: 2px;
+        }
+
+        .trust-item:nth-child(2) .trust-bar { background: var(--navy); }
+
+        .trust-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .trust-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        @media (min-width: 768px) {
+            .trust-grid { grid-template-columns: repeat(3, 1fr); }
+            .trust-item {
+                border-bottom: none;
+                border-right: 1px solid var(--border);
+            }
+            .trust-item:last-child { border-right: none; }
+            .trust-header h2 { font-size: 38px; }
+        }
+
+        /* ========================================
+           TESTIMONIALS
+        ======================================== */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--grey);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonials-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .testimonials-header p {
+            color: var(--text-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-stars {
+            color: var(--warning);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .author-info strong {
+            display: block;
+            font-size: 14px;
+            color: var(--navy);
+        }
+
+        .author-info span {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        @media (min-width: 768px) {
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 992px) {
+            .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+            .testimonials-header h2 { font-size: 38px; }
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        footer {
+            background: var(--navy);
+            color: #fff;
+            padding: 80px 0 30px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            font-size: 13px;
+            max-width: 300px;
+            line-height: 1.7;
+            margin: 20px auto 0;
+        }
+
+        .footer-logo {
+            width: 160px;
+            filter: invert(1) brightness(200%);
+            margin: 0 auto;
+        }
+
+        .footer-social {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-social a i {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-3px);
+            background: var(--pink);
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: #fff;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--pink);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: inherit;
+            justify-content: center;
+        }
+
+        .footer-contact-icon {
+            color: var(--pink);
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .footer-contact-text strong {
+            display: block;
+            font-size: 12px;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .footer-contact-text span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .copyright a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .copyright a:hover { color: var(--pink); }
+
+        .powered-by {
+            margin-top: 10px;
+        }
+
+        .powered-by a { color: var(--pink); }
+
+        @media (min-width: 768px) {
+            .footer-main {
+                grid-template-columns: 1.5fr 1fr 1.5fr;
+                text-align: left;
+            }
+            .footer-brand p { margin: 20px 0 0; }
+            .footer-logo { margin: 0; }
+            .footer-social { justify-content: flex-start; }
+            .footer-contact-item { justify-content: flex-start; }
+        }
+
+        /* ========================================
+           ANIMATIONS
+        ======================================== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-flex">
+            <a href="index.html" class="logo">
+                <img src="https://assets.cdn.filesafe.space/Nx9nWEwdl4iSmWj6ZV7i/media/692f5eef0b5011a0afa9b2bb.png" alt="Precision National Title">
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="#footer-contact">Contact</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="header-contact-details">
+                    <a href="mailto:info@precisionnationaltitle.com" class="header-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span class="contact-email">info@precisionnationaltitle.com</span>
+                    </a>
+                    <a href="tel:8447684853" class="header-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span class="contact-phone">844-PNTITLE</span>
+                    </a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <!-- Background Video Container -->
+        <div class="hero-overlay"></div>
+        <video class="hero-video-bg" id="heroVideo" autoplay muted loop playsinline poster="https://storage.googleapis.com/msgsndr/Nx9nWEwdl4iSmWj6ZV7i/media/692b77ce2b865e563ac61ee5.jpg">
+            <source src="https://storage.googleapis.com/msgsndr/Nx9nWEwdl4iSmWj6ZV7i/media/6967caa741dad195019d0788.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                Attorney-Founded Title Company
+            </div>
+            <div class="hero-subhead">Precision National Title</div>
+            <h1>Your Real Estate Journey <span>Made Simple</span></h1>
+            <p>Founded by Brittany Kearney, we protect your property rights with personalized expertise and modern technology. Buying, selling, or commercial—we make it smooth and secure.</p>
+
+            <div class="hero-image animate-on-scroll">
+                <img src="https://storage.googleapis.com/msgsndr/Nx9nWEwdl4iSmWj6ZV7i/media/692b77ce2b865e563ac61ee5.jpg" alt="Brittany Kearney - Founder">
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#footer-contact" class="btn-hero-primary">
+                    <i class="fas fa-file-signature"></i>
+                    Open a Title Order
+                </a>
+                <a href="#footer-contact" class="btn-hero-secondary">
+                    <i class="fas fa-comments"></i>
+                    Connect With Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready for a seamless closing?</h2>
+            <p>Join real estate professionals who trust Precision National Title.</p>
+            <div class="cta-buttons">
+                <a href="#footer-contact" class="btn-cta-primary">
+                    <i class="fas fa-rocket"></i>
+                    Get Started
+                </a>
+                <a href="tel:8447684853" class="btn-cta-secondary">
+                    <i class="fas fa-phone-alt"></i>
+                    Call 844-PNTITLE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="stats-bar" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate-on-scroll" onclick="toggleStat(this)">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="stat-title">WireSafe® Guarantee</div>
+                    <div class="stat-desc">Industry-leading cybersecurity protection on every transaction we manage.</div>
+                    <div class="stat-hint">Tap to learn more</div>
+                </div>
+                <div class="stat-item animate-on-scroll" onclick="toggleStat(this)">
+                    <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="stat-title">60-Minute Clear™</div>
+                    <div class="stat-desc">Our PrecisionAI™ engine reviews title abstracts instantly for rapid commitments.</div>
+                    <div class="stat-hint">Tap to learn more</div>
+                </div>
+                <div class="stat-item animate-on-scroll" onclick="toggleStat(this)">
+                    <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="stat-title">Growing Nationwide</div>
+                    <div class="stat-desc">Expanding our network to serve clients across the country with local expertise.</div>
+                    <div class="stat-hint">Tap to learn more</div>
+                </div>
+                <div class="stat-item animate-on-scroll" onclick="toggleStat(this)">
+                    <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                    <div class="stat-title">Modern Integration</div>
+                    <div class="stat-desc">We integrate with your systems for seamless, tech-forward transactions.</div>
+                    <div class="stat-hint">Tap to learn more</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / FOUNDER -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-header">
+                <span>Meet Our Founder</span>
+                <h2>The Precision Standard</h2>
+            </div>
+
+            <div class="footprint-stats animate-on-scroll">
+                <div class="fp-stat">
+                    <strong class="pink">24/7</strong>
+                    <span>Client Support</span>
+                </div>
+                <div class="fp-stat">
+                    <strong>100%</strong>
+                    <span>Client Focused</span>
+                </div>
+                <div class="fp-stat">
+                    <strong>Fast</strong>
+                    <span>Turnaround Times</span>
+                </div>
+            </div>
+
+            <div class="founder-card animate-on-scroll">
+                <img src="https://storage.googleapis.com/msgsndr/Nx9nWEwdl4iSmWj6ZV7i/media/692b77ce2b865e563ac61ee5.jpg" alt="Brittany Kearney">
+                <div class="founder-text">
+                    <h4>Brittany Kearney</h4>
+                    <h5>Founder & CEO</h5>
+                    <p>"We built Precision National Title with a singular focus: to modernize the closing experience. By unifying technology and talent, we provide a closing process that is predictable, secure, and effortless."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="services-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive title and escrow solutions for every transaction type.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-home"></i></div>
+                    <h3>Residential Settlements</h3>
+                    <p>Streamlined closings for buyers, sellers, and agents with real-time updates.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Digital Earnest Money</li>
+                        <li><i class="fas fa-check"></i> Mobile Notary Network</li>
+                        <li><i class="fas fa-check"></i> Hybrid E-Closings</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-building"></i></div>
+                    <h3>Commercial Transactions</h3>
+                    <p>Expert handling of complex commercial and development projects.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Construction Disbursement</li>
+                        <li><i class="fas fa-check"></i> 1031 Exchange Services</li>
+                        <li><i class="fas fa-check"></i> High-Liability Policies</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-server"></i></div>
+                    <h3>Lender Solutions</h3>
+                    <p>Integrated solutions for lenders requiring bulk processing and connectivity.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> LOS Integrations</li>
+                        <li><i class="fas fa-check"></i> Automated Ordering</li>
+                        <li><i class="fas fa-check"></i> Centralized Dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST / WHY CHOOSE -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-header">
+                <h2>Why Choose Precision?</h2>
+            </div>
+
+            <div class="trust-grid">
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-bar"></div>
+                    <h3>Speed & Efficiency</h3>
+                    <p>Our streamlined process and technology ensure you never miss a closing date due to title delays.</p>
+                </div>
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-bar"></div>
+                    <h3>Personal Attention</h3>
+                    <p>As a boutique firm, we provide dedicated support and direct access to experienced professionals.</p>
+                </div>
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-bar"></div>
+                    <h3>Full Transparency</h3>
+                    <p>Real-time updates and clear communication mean you're never left wondering about your transaction status.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2>What Our Clients Say</h2>
+                <p>Trusted by real estate professionals.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Precision National Title made my first home purchase so much easier. They explained everything clearly and were always available to answer questions."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <strong>Sarah M.</strong>
+                            <span>First-Time Homebuyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Fast turnaround and excellent communication. Brittany and her team truly care about their clients. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JT</div>
+                        <div class="author-info">
+                            <strong>James T.</strong>
+                            <span>Real Estate Agent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Professional, responsive, and thorough. They handled our commercial transaction with expertise and kept us informed every step of the way."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LR</div>
+                        <div class="author-info">
+                            <strong>Linda R.</strong>
+                            <span>Property Investor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer-contact">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="https://assets.cdn.filesafe.space/Nx9nWEwdl4iSmWj6ZV7i/media/692f5eef0b5011a0afa9b2bb.png" alt="Precision National Title" class="footer-logo">
+                    <p>Setting the new benchmark in title insurance and risk management for the modern real estate economy.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="#">Lender Portal</a></li>
+                        <li><a href="#">Agent Portal</a></li>
+                        <li><a href="#">Secure File Drop</a></li>
+                        <li><a href="#footer-contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                        <div class="footer-contact-text">
+                            <strong>Headquarters</strong>
+                            <span>Serving Clients Nationwide</span>
+                        </div>
+                    </div>
+                    <a href="tel:8447684853" class="footer-contact-item">
+                        <i class="fas fa-phone-alt footer-contact-icon"></i>
+                        <div class="footer-contact-text">
+                            <strong>Call Us Now</strong>
+                            <span>844-PNTITLE</span>
+                        </div>
+                    </a>
+                    <a href="mailto:info@precisionnationaltitle.com" class="footer-contact-item">
+                        <i class="fas fa-envelope footer-contact-icon"></i>
+                        <div class="footer-contact-text">
+                            <strong>Email Us</strong>
+                            <span>info@precisionnationaltitle.com</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div>
+                    © 2025 Precision National Title. All Rights Reserved.
+                    <a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Accessibility</a>
+                </div>
+                <div class="powered-by">Powered by <a href="https://exposuresolutions.io" target="_blank">Exposure Solutions AI</a> ⚡</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.getElementById('mobileToggle');
+            nav.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Stats toggle (accordion style)
+        function toggleStat(element) {
+            document.querySelectorAll('.stat-item').forEach(item => {
+                if (item !== element) item.classList.remove('active');
+            });
+            element.classList.toggle('active');
+        }
+
+        // Scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Auto-fix for website builders
+        document.addEventListener("DOMContentLoaded", function() {
+            try {
+                var header = document.querySelector('header');
+                if(header) {
+                    var parent = header.parentElement;
+                    while(parent && parent.tagName !== 'BODY') {
+                        parent.style.padding = '0';
+                        parent.style.margin = '0';
+                        parent = parent.parentElement;
+                    }
+                }
+            } catch(e) { console.log("Auto-fix padding skipped"); }
+        });
+
+        // ==========================================
+        // HERO VIDEO SYNC LOGIC
+        // ==========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('heroVideo');
+            // Check if heroContent exists, if not, we might need to target the container or specific elements to fade in
+            // For now, ensuring the video plays is the primary goal requested.
+            
+            if(video) {
+                // Ensure video plays
+                video.play().catch(e => console.log("Auto-play prevented"));
+            }
+        });
+    </script>
+
+</body>
+</html>
